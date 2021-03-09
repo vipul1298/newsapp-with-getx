@@ -1,4 +1,3 @@
-import 'package:assign/models/news_response.dart';
 import 'package:assign/services/remote_services.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +7,7 @@ class NewsController extends GetxController {
   var isLoading = true.obs;
   var isSourcesLoading = true.obs;
   var category = "general".obs;
+  var pos = 0.obs;
 
   @override
   void onInit() {

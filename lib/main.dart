@@ -1,6 +1,8 @@
+import 'package:assign/screens/desktop_home_page.dart';
 import 'package:assign/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'dart:io' show Platform;
 
 import 'controllers/news_controller.dart';
 
@@ -9,15 +11,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  final NewsController _newsController = Get.put(NewsController());
 
-  // This widget is the root of your application.
-  @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
         ),
-        home: HomePage());
+        home: Platform.isLinux ? DesktopHomePage() : HomePage());
   }
 }

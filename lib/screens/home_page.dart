@@ -1,9 +1,7 @@
 import 'package:assign/components/search_page.dart';
 import 'package:assign/components/sources.dart';
 import 'package:assign/components/top_headlines.dart';
-import 'package:assign/controllers/news_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -21,7 +19,6 @@ class _HomePageState extends State<HomePage>
   void initState() {
     _tabController = new TabController(length: 3, vsync: this);
     _scrollController = new ScrollController();
-    final NewsController _newsController = Get.put(NewsController());
 
     super.initState();
   }
