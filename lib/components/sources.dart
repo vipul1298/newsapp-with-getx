@@ -35,11 +35,11 @@ class Sources extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+      padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 3),
       child: Obx(() {
         if (_newsController.isSourcesLoading.value)
-          return Center(
-            child: CircularProgressIndicator(),
+          return const Center(
+            child: const CircularProgressIndicator(),
           );
         return ListView.builder(
             itemCount: _newsController.sourceList.length,

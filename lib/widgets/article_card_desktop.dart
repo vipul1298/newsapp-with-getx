@@ -26,13 +26,16 @@ class ArticleCardDesktop extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: imageUrl == null
-                        ? AssetImage(Data.PLACEHOLDER_IMAGE)
+                        ? const AssetImage(Data.PLACEHOLDER_IMAGE)
                         : NetworkImage(
                             imageUrl,
                           ),
                     fit: BoxFit.cover)),
           ),
-          title: Text(source),
+          title: Text(source,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
           subtitle: Text(title),
           trailing: Text(publishedAt),
         ),

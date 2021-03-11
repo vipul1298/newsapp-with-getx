@@ -42,19 +42,19 @@ class _HomePageState extends State<HomePage>
                 pinned: true,
                 floating: true,
                 backgroundColor: Colors.blueGrey,
-                title: Text("NewsApp"),
+                title: const Text("NewsApp"),
                 bottom: TabBar(
                     indicatorWeight: 3.0,
                     indicatorColor: Colors.black,
                     controller: _tabController,
                     tabs: [
-                      Tab(
+                      const Tab(
                         text: "Top-Headlines",
                       ),
-                      Tab(
+                      const Tab(
                         text: "Sources",
                       ),
-                      Tab(
+                      const Tab(
                         text: "Search",
                       )
                     ]),

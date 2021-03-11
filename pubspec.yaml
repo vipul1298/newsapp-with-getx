@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+    
   flutter_custom_tabs: "^0.6.0"
   get: ^3.26.0
   http: ^0.13.0

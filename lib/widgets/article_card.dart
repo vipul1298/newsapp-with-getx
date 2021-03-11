@@ -23,12 +23,12 @@ class ArticleCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(5.0),
               height: MediaQuery.of(context).size.height * 0.32,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: imageUrl == null
-                          ? AssetImage(Data.PLACEHOLDER_IMAGE)
+                          ? const AssetImage(Data.PLACEHOLDER_IMAGE)
                           : NetworkImage(imageUrl),
                       fit: BoxFit.cover)),
             ),
@@ -36,7 +36,7 @@ class ArticleCard extends StatelessWidget {
               height: 10,
             ),
             Container(
-              margin: EdgeInsets.only(left: 5),
+              margin: const EdgeInsets.only(left: 5),
               decoration: BoxDecoration(
                   color: Colors.black38,
                   borderRadius: BorderRadius.circular(25)),
@@ -44,7 +44,8 @@ class ArticleCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                 child: Text(
                   source,
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 18.0, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -52,14 +53,14 @@ class ArticleCard extends StatelessWidget {
               padding: const EdgeInsets.all(4.0),
               child: Text(
                 title,
-                style: TextStyle(fontSize: 14.0),
+                style: const TextStyle(fontSize: 14.0),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 publishedAt,
-                style: TextStyle(fontSize: 12.0),
+                style: const TextStyle(fontSize: 12.0),
               ),
             ),
           ],

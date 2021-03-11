@@ -18,14 +18,12 @@ class _TopHeadlinesState extends State<TopHeadlines> {
     try {
       await launch(
         url,
-        option: new CustomTabsOption(
+        option: CustomTabsOption(
           toolbarColor: Theme.of(context).primaryColor,
           enableDefaultShare: true,
           enableUrlBarHiding: true,
           showPageTitle: true,
-          animation: new CustomTabsAnimation.slideIn(),
-          // or user defined animation.
-
+          animation: CustomTabsAnimation.slideIn(),
           extraCustomTabs: <String>[
             // ref. https://play.google.com/store/apps/details?id=org.mozilla.firefox
             'org.mozilla.firefox',
@@ -68,25 +66,26 @@ class _TopHeadlinesState extends State<TopHeadlines> {
         Expanded(
           child: Container(
               child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
             child: Obx(() {
               if (_newsController.isLoading.value)
-                return Center(
-                  child: CircularProgressIndicator(),
+                return const Center(
+                  child: const CircularProgressIndicator(),
                 );
-              return ListView.builder(
-                  itemCount: _newsController.newsList.length,
-                  itemBuilder: (ctx, index) {
-                    var articles = _newsController.newsList;
-                    return InkWell(
-                      onTap: () => _launchURL(context, articles[index].url),
-                      child: ArticleCard(
-                          imageUrl: articles[index].urlToImage,
-                          title: articles[index].title,
-                          source: articles[index].source.name,
-                          publishedAt: articles[index].publishedAt),
-                    );
-                  });
+              else
+                return ListView.builder(
+                    itemCount: _newsController.newsList.length,
+                    itemBuilder: (ctx, index) {
+                      var articles = _newsController.newsList;
+                      return InkWell(
+                        onTap: () => _launchURL(context, articles[index].url),
+                        child: ArticleCard(
+                            imageUrl: articles[index].urlToImage,
+                            title: articles[index].title,
+                            source: articles[index].source.name,
+                            publishedAt: articles[index].publishedAt),
+                      );
+                    });
             }),
           )),
         ),

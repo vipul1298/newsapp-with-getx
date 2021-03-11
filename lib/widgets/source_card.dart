@@ -11,7 +11,7 @@ class SourceCard extends StatelessWidget {
     return Card(
       color: Colors.amber[100],
       elevation: 5.0,
-      margin: EdgeInsets.all(3.0),
+      margin: const EdgeInsets.all(3.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,14 +19,15 @@ class SourceCard extends StatelessWidget {
             padding: const EdgeInsets.all(4.0),
             child: Text(
               sourceName,
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              style:
+                  const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Text(
               "Country: $country",
-              style: TextStyle(fontSize: 15.0),
+              style: const TextStyle(fontSize: 15.0),
             ),
           )
         ],

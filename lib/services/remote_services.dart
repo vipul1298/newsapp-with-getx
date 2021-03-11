@@ -33,4 +33,16 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<List<Articles>> fetchResultsForQuery(String query) async {
+    var url = '${Data.BASE_URL}/v2/everything?q=$query&apiKey=${Data.API}';
+    var response = await client.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      var articles = NewsResponse.fromJson(json.decode(jsonString)).articles;
+      return articles;
+    } else {
+      return null;
+    }
+  }
 }

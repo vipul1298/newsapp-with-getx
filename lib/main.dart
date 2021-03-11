@@ -7,6 +7,8 @@ import 'dart:io' show Platform;
 import 'controllers/news_controller.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 

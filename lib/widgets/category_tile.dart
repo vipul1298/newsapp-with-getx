@@ -25,10 +25,11 @@ class CategoryTile extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(color: Colors.black54),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 2, horizontal: 3),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 2, horizontal: 3),
                   child: Text(
                     "$categoryName".toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
