@@ -7,12 +7,12 @@ class DetailScreen extends StatelessWidget {
   final NewsController _newsController = Get.find();
   @override
   Widget build(BuildContext context) {
-    var articles = _newsController.newsList;
+    var articles = _newsController.newsList ?? [];
     return SingleChildScrollView(
       child: Container(
           decoration: BoxDecoration(color: Colors.white),
           child: Obx(() {
-            if (articles == null)
+            if (articles.isEmpty)
               return const Center(
                 child: const Text("Loading..."),
               );
