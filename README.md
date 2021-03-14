@@ -23,6 +23,9 @@ For more info, see this package [get](https://pub.dev/packages/get).
 ## Platform
 It will work on mobile as well as linux.
 
+###Note
+Go to lib/constants/data.dart and add your api key and then u r good to go :)
+
 
 
 
